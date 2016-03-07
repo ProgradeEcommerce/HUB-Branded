@@ -1,0 +1,16 @@
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center" ng-class="whatColor($index)" ng-repeat="c in currentCategory.SubCategories">
+    <a class="cat-button">
+	    <h5 style="font-size:18px; color:white;" ng-bind-html="c.Name" />
+    </a>
+    <div class="col-xs-12" ng-repeat="subcat in c.SubCategories">
+    	<a ng-href="catalog/{{subcat.InteropID}}" ng-show="subcat.InteropID.indexOf('-Kit') == -1 && subcat.InteropID != 'BDP-Rot-EventPackage'" class="subcat-link">
+		    <h5 ng-bind-html="subcat.Name" />
+	    </a>
+    	<a ng-href="catalogkit/{{subcat.InteropID}}" ng-show="subcat.InteropID.indexOf('-Kit') != -1 && subcat.InteropID != 'BDP-Rot-EventPackage'" class="subcat-link">
+		    <h5 ng-bind-html="subcat.Name" />
+	    </a>
+    	<a href="https://form.jotform.com/50965505574967" target="_blank" ng-show="subcat.InteropID == 'BDP-Rot-EventPackage'" class="subcat-link">
+		    <h5 ng-bind-html="subcat.Name" />
+	    </a>
+    </div>
+</div>

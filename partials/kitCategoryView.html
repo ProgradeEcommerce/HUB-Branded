@@ -1,0 +1,36 @@
+<!--Kit Products View-->
+<div class="col-xs-12">
+	<p class="text-center kit-header">{{currentCategory.Name}}</p>
+</div>
+<div class="panel-product-list no-panels" ng-show="currentCategory.InteropID">
+    <nav class="nav">
+        <ul>
+            <loadingindicator ng-show="searchLoading" title="{{'Please wait while we fetch all products' | r | xlat}}" />
+            <li id="451_lst_prod" ng-repeat="product in products | paginate:(settings.currentPage-1) * settings.pageSize | limitTo:settings.pageSize | orderBy:sorter:direction">
+                <div class="well">
+                    <kitproductview p="product" user="user" />
+                </div>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div class="col-xs-12">
+	<button class="pull-right" ng-click="addToOrder()">Add to Cart</button>
+	<input class="pull-right" type="number" ng-model="allQty">
+</div>
+<div class="links-nav">
+	<ul class="nav">
+    	<li>
+        	<a class="green-link glt-font" href="#">
+            	<i class="fa fa-arrow-circle-o-right"></i>
+            	<span>FAQ</span>
+            </a>
+        </li>
+    	<li>
+        	<a class="orange-link glt-font" href="mailto:paperinfo@glatfelter.com">
+            	<i class="fa fa-arrow-circle-o-right"></i>
+            	<span>Email paperinfo@glatfelter.com</span>
+            </a>
+        </li>
+    </ul>
+</div>

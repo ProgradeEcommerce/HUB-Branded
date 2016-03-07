@@ -1,0 +1,26 @@
+<div class="451qa_prod_item row">
+    <div class="col-xs-12 text-center vertical-center">
+        <a href="product/{{LineItem.Product.InteropID}}">
+            <figure class="product-figure vertical-center" ng-show="LineItem.Variant.LargeImageUrl || LineItem.Product.LargeImageUrl" ng-style="{'background-image':'url('+LineItem.Product.LargeImageUrl+')'}">
+                <!--<img class="img-responsive product-view-img" ng-src="{{LineItem.Variant.LargeImageUrl || LineItem.Product.LargeImageUrl}}"/>-->
+            </figure>
+            <div class="empty" ng-hide="LineItem.Variant.LargeImageUrl || LineItem.Product.LargeImageUrl">
+                <span class="fa empty"><i class="fa fa-camera"></i></span>
+            </div>
+        </a>
+    </div>
+    <div class="col-xs-12 text-left product-info-box">
+        <div class="panel-body product-panel-body vertical-center">
+            <a href="product/{{LineItem.Product.InteropID}}" ng-hide="LineItem.Product.StaticSpecGroups.File.Specs.Download.FileURL">
+                <p class="text-center vertical-center glt-font"><strong>{{LineItem.Product.Name}}</strong></p>
+                <p class="text-center vertical-center glt-font" ng-hide="LineItem.PriceSchedule.PriceBreaks[0].Price == 0"><strong>${{LineItem.PriceSchedule.PriceBreaks[0].Price.toFixed(2)}}</strong></p>
+        	    <p class="text-center vertical-center underlined glt-font">View Product</p>
+            </a>
+            <a href="{{LineItem.Product.StaticSpecGroups.File.Specs.Download.FileURL}}" ng-show="LineItem.Product.StaticSpecGroups.File.Specs.Download.FileURL">
+                <p class="text-center vertical-center glt-font"><strong>{{LineItem.Product.Name}}</strong></p>
+                <p class="text-center vertical-center glt-font" ng-hide="LineItem.PriceSchedule.PriceBreaks[0].Price == 0"><strong>${{LineItem.PriceSchedule.PriceBreaks[0].Price.toFixed(2)}}</strong></p>
+        	    <p class="text-center vertical-center underlined glt-font">Download Product</p>
+            </a>
+        </div>
+    </div>
+</div>

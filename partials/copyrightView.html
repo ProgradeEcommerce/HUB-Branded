@@ -1,0 +1,31 @@
+<footer class="footer">
+    <div class="col-xs-12 teal-copyright-bar text-center vertical-center">
+        <div class="row" ng-show="Four51User.isAuthenticated() && user.Type != 'TempCustomer'">
+            <div class="col-12-xs visible-lg">
+            	<img class="img-center img-responsive copyright-logo" ng-class="hideLogo()" src="http://glatfelter.prograde.com/Site/GLTWorks2/Glatfelter-white.png">
+                <p class="glt-font">HELPDESK: <a href="mailto:helpdesk@prograde.com">helpdesk@prograde.com</a> | CUSTOMER SERVICE: 888-273-1617 and push "0" for assistance or <a href="mailto:helpdesk@prograde.com">csr@prograde.com</a></p>
+            </div>
+            <div class="col-12-xs hidden-lg copyright-content-wrapper">
+            	<img class="img-center img-responsive copyright-logo" ng-class="hideLogo()" src="http://glatfelter.prograde.com/Site/GLTWorks2/Glatfelter-white.png">
+                <p class="glt-font">HELPDESK: <a href="mailto:helpdesk@prograde.com">helpdesk@prograde.com</a></p>
+                <p class="glt-font">CUSTOMER SERVICE: 888-273-1617 and push "0" for assistance or <a href="mailto:helpdesk@prograde.com">csr@prograde.com</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 copyright-center">
+        <div class="row">
+            <p class="glt-font">
+                COPYRIGHT © 2015 Glatfelter. All Rights Reserved. &nbsp; &nbsp; &nbsp;
+                <span ng-if="!(user.Permissions.contains('HideTerms'))">
+                    <a href="conditions">
+                        Terms of Use
+                    </a>
+                     | 
+                    <a href="contactus">
+                        Contact Us
+                    </a>
+                </span>
+            </p>
+        </div>
+    </div>
+</footer>
