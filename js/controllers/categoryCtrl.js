@@ -97,4 +97,11 @@ function ($routeParams, $sce, $scope, $451, Category, Product, Nav, $location, $
 	        return "catHeaderStyle-2";
 	    }
 	}
+	
+	$scope.dualClassFunctions = function(tree) {
+	    var tempClass = $scope.currentCategory.SubCategories.length > 2 ? 'col-lg-4 col-md-4 col-sm-4 col-xs-12' : 'col-sm-6 col-xs-12';
+	    console.log(tree);
+	    console.log($scope.whatClassProduct(tree));
+	    return $scope.whatColor(tree) + ' ' + tempClass;
+	}
 }]);
