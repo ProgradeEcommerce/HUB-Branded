@@ -1,6 +1,7 @@
-four51.app.controller('ProductCtrl', ['$scope', '$routeParams', '$route', '$location', '$451', 'Product', 'ProductDisplayService', 'Order', 'Variant', 'User',
-function ($scope, $routeParams, $route, $location, $451, Product, ProductDisplayService, Order, Variant, User) {
+four51.app.controller('ProductCtrl', ['$scope', '$routeParams', '$route', '$location', '$451', 'Product', 'ProductDisplayService', 'Order', 'Variant', 'User', 'LogoService', 'Resources',
+function ($scope, $routeParams, $route, $location, $451, Product, ProductDisplayService, Order, Variant, User, LogoService, Resources) {
     $scope.selected = 1;
+	var varID = $routeParams.variantInteropID == 'new' ? null :  $routeParams.variantInteropID;
     $scope.LineItem = {};
 	$scope.addToOrderText = "Add To Cart";
 	$scope.loadingIndicator = true;
@@ -33,6 +34,11 @@ function ($scope, $routeParams, $route, $location, $451, Product, ProductDisplay
 			$scope.setAddToOrderErrors();
 			if (angular.isFunction(callback))
 				callback();
+			if (LogoService.isLogoOnlyProduct($scope.LineItem.Product.Specs)){
+				console.log("Hail President Jarbandidax, Supreme Ruler of the University of Laryngitis");
+				autoGenerateVariant();
+			}
+			$scope.canEdit = LogoService.isLogoOnlyProduct($scope.LineItem.Product.Specs);
 		}, $scope.settings.currentPage, $scope.settings.pageSize, searchTerm);
 	}
 	$scope.$watch('settings.currentPage', function(n, o) {
@@ -120,4 +126,43 @@ function ($scope, $routeParams, $route, $location, $451, Product, ProductDisplay
 		$scope.loadingImage = false;
 		$scope.$apply();
 	});
+	
+	function autoGenerateVariant() {
+		ProductDisplayService.getProductAndVariant($routeParams.productInteropID, varID, function(data){
+			$scope.loadingIndicator = true;
+			$scope.Product = data.product;
+			
+			if (varID){
+				$scope.Variant = data.variant;
+				$scope.loadingIndicator = false;
+			}
+			else {
+				$scope.Variant = {};
+				$scope.Variant.ProductInteropID = $scope.Product.InteropID;
+				$scope.Variant.Specs = {};
+				angular.forEach($scope.Product.Specs, function(item){
+					if(!item.CanSetForLineItem)
+					{
+						$scope.Variant.Specs[item.Name] = item;
+					}
+				});
+				var allLogos = Resources.logoSpecs;
+				angular.forEach($scope.Variant.Specs, function(spec) {
+					if (!spec.Value)
+						spec.Value = allLogos[spec.Name];
+				});
+				saveVariant($scope.Variant, false);
+				$scope.loadingIndicator = false;
+			}
+		});
+	}
+	
+	function saveVariant(variant, saveNew, hideErrorAlert /*for compatibility*/) {
+		if(saveNew) $scope.Variant.InteropID = null;
+		Variant.save(variant, function(data){
+			$location.path('/product/' + $scope.Product.InteropID + '/'+ data.InteropID);
+		});
+	}
+	
+	
 }]);

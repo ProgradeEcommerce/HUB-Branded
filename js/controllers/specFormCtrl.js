@@ -1,5 +1,5 @@
-four51.app.controller('SpecFormCtrl', ['$scope', '$location', '$route', '$routeParams', '$window', 'ProductDisplayService', 'Variant',
-function ($scope, $location, $route, $routeParams, $window, ProductDisplayService, Variant) {
+four51.app.controller('SpecFormCtrl', ['$scope', '$location', '$route', '$routeParams', '$window', 'ProductDisplayService', 'Variant', 'Resources',
+function ($scope, $location, $route, $routeParams, $window, ProductDisplayService, Variant, Resources) {
 	$scope.variantErrors = [];
 	var varID = $routeParams.variantInteropID == 'new' ? null :  $routeParams.variantInteropID;
 	$scope.loadingImage = true;
@@ -18,6 +18,14 @@ function ($scope, $location, $route, $routeParams, $window, ProductDisplayServic
 				}
 			});
 		}
+    
+        /*Populates the Logos for CoBrand, Glatfelter, and any other logos*/
+        
+        var allLogos = Resources.logoSpecs;
+				angular.forEach($scope.Variant.Specs, function(spec) {
+					if (!spec.Value)
+						spec.Value = allLogos[spec.Name];
+				});
 	});
 	function validateVariant(){
 		if(!$scope.Variant) return;

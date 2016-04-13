@@ -397,10 +397,54 @@ four51.app.factory('Resources', function() {
         { "label": 'WISCONSIN', "value": 'WI'},
         { "label": 'WYOMING', "value": 'WY' }
     ];
+	
+	var urlPath = '//storage2/ProjectFiles/Four51/Shared/1a6d0626-1719-4a8f-9988-029e544b2fae/Glatfelter/Logos/';
+
+    var logoSpecs = {
+		"BDP_CoBrandLogo_White": urlPath + 'Misc/YOURLOGOHERE-white.pdf',
+		"BDP_CoBrandLogo_CMYK": urlPath + 'Misc/YOURLOGOHERE.pdf',
+		"BDP_CoBrandLogo_Spot": urlPath + 'Misc/YOURLOGOHERE.pdf',
+		"BDP_CoBrandLogo_Black": urlPath + 'Misc/YOURLOGOHERE.pdf',
+		"BDP_Glatfelter_White": urlPath + 'Glatfelter/Glatfelter_stacked_beyondpaper_white.pdf',
+		"BDP_Glatfelter_CMYK": urlPath + 'Glatfelter/Glatfelter_stacked_beyondpaper_cmyk.pdf',
+		"BDP_Glatfelter_Spot": urlPath + 'Glatfelter/Glatfelter_stacked_beyondpaper_spot.pdf',
+		"BDP_Glatfelter_Black": urlPath + 'Glatfelter/Glatfelter_stacked_beyondpaper_black.pdf',
+		"BDP_Glatfelter_c40m40y40k100": urlPath + 'Glatfelter/Glatfelter_horizontal_c40m40y40k100.pdf',
+		"BDP_Transform_White": urlPath + 'TransformLaserMocr/TransformLaserMOCR-white.pdf',
+		"BDP_Transform_CMYK": urlPath + 'TransformLaserMocr/TransformLaserMOCR-cmyk.pdf',
+		"BDP_Transform_Spot": urlPath + 'TransformLaserMocr/TransformLaserMOCR-spot.pdf',
+		"BDP_Transform_Black": urlPath + 'TransformLaserMocr/TransformLaserMOCR-black.pdf',
+		"BDP_DefensaSecurity_White": urlPath + 'DefensaSecurityPapers/DefensaSecurityPapers-white.pdf',
+		"BDP_DefensaSecurity_CMYK": urlPath + 'DefensaSecurityPapers/DefensaSecurityPapers-cmyk.pdf',
+		"BDP_DefensaSecurity_Spot": urlPath + 'DefensaSecurityPapers/DefensaSecurityPapers-spot.pdf',
+		"BDP_DefensaSecurity_Black": urlPath + 'DefensaSecurityPapers/DefensaSecurityPapers-black.pdf',
+		"BDP_DefensaSecurity_Green": urlPath + 'DefensaSecurityPapers/DefensaSecurityPapers-green.pdf',
+		"BDP_ExcelOne_White": urlPath + 'ExcelOne/ExcelOne_white.pdf',
+		"BDP_ExcelOne_CMYK": urlPath + 'ExcelOne/ExcelOne_cmyk.pdf',
+		"BDP_ExcelOne_Black": urlPath + 'ExcelOne/ExcelOne_black.pdf',
+		"BDP_Sequel_White": urlPath + 'Sequel/Sequel_white.pdf',
+		"BDP_Sequel_CMYK": urlPath + 'Sequel/Sequel_cmyk.pdf',
+		"BDP_Sequel_Spot": urlPath + 'Sequel/Sequel_spot.pdf',
+		"BDP_Sequel_Black": urlPath + 'Sequel/Sequel_black.pdf',
+		"BDP_Xcelerator_White": urlPath + 'XceleratorPlus/XceleratorPlus_white.pdf',
+		"BDP_Xcelerator_CMYK": urlPath + 'XceleratorPlus/XceleratorPlus_cmyk.pdf',
+		"BDP_Xcelerator_Spot": urlPath + 'XceleratorPlus/XceleratorPlus_spot.pdf',
+		"BDP_Xcelerator_Black": urlPath + 'XceleratorPlus/XceleratorPlus_black.pdf',
+		"BDP_Pixelle_White": urlPath + 'Pixelle/Pixelle-white.pdf',
+		"BDP_Pixelle_CMYK": urlPath + 'Pixelle/Pixelle-cmyk.pdf',
+		"BDP_Pixelle_Spot": urlPath + 'Pixelle/Pixelle-spot.pdf',
+		"BDP_Pixelle_Black": urlPath + 'Pixelle/Pixelle-black.pdf',
+		"BDP_Optica_White": urlPath + 'Optica/Optica-white.pdf',
+		"BDP_Optica_CMYK": urlPath + 'Optica/Optica-cmyk.pdf',
+		"BDP_Optica_Spot": urlPath + 'Optica/Optica-spot.pdf',
+		"BDP_Optica_Black": urlPath + 'Optica/Optica-black.pdf',
+		"BDP_NatureSolv_CMYK": urlPath + 'NatureSolv/NatureSolv-cmyk.pdf'
+    };
 
     return {
         countries:  countries,
         states: states,
-        usStates: usStates
+        usStates: usStates,
+		logoSpecs: logoSpecs
     };
 });
