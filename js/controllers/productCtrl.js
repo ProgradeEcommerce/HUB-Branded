@@ -154,6 +154,9 @@ function ($scope, $routeParams, $route, $location, $451, Product, ProductDisplay
 				saveVariant($scope.Variant, false);
 				$scope.loadingIndicator = false;
 			}
+			if($scope.LineItem.Specs.CompanyLogo.Value == ""){
+		$scope.LineItem.Specs.CompanyLogo.Value = $scope.companyName;
+		}
 		});
 	}
 	
