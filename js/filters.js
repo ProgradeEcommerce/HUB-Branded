@@ -82,7 +82,7 @@ four51.app.filter('hideSpecs', function() {
     return function(value) {
         var output = [];
         angular.forEach(value, function (v) {
-            if (v.Name != 'pa_shipping_height' && v.Name != 'pa_shipping_length' && v.Name != 'pa_shipping_width' && v.Name != 'pa_shipping_weight' && v.Name != 'pa_shipping_origin_code') {
+            if (v.Name != 'pa_shipping_height' && v.Name != 'pa_shipping_length' && v.Name != 'pa_shipping_width' && v.Name != 'pa_shipping_weight' && v.Name != 'pa_shipping_origin_code' && v.Name !== 'CompanyName') {
                 output.push(v);
             }
 
