@@ -409,6 +409,7 @@ four51.app.factory('Resources', function() {
 		"BDP_Glatfelter_CMYK": urlPath + 'Glatfelter/Glatfelter_stacked_beyondpaper_cmyk.pdf',
 		"BDP_Glatfelter_Spot": urlPath + 'Glatfelter/Glatfelter_stacked_beyondpaper_spot.pdf',
 		"BDP_Glatfelter_Black": urlPath + 'Glatfelter/Glatfelter_stacked_beyondpaper_black.pdf',
+		"BDP_Glatfelter_Horizontal_White": urlPath + 'Glatfelter/Glatfelter_horizontal_white.pdf',
 		"BDP_Glatfelter_c40m40y40k100": urlPath + 'Glatfelter/Glatfelter_horizontal_c40m40y40k100.pdf',
 		"BDP_Transform_White": urlPath + 'TransformLaserMocr/TransformLaserMOCR-white.pdf',
 		"BDP_Transform_CMYK": urlPath + 'TransformLaserMocr/TransformLaserMOCR-cmyk.pdf',
