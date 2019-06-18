@@ -398,7 +398,7 @@ four51.app.factory('Resources', function() {
         { "label": 'WYOMING', "value": 'WY' }
     ];
 	
-	var urlPath = '//storage2/ProjectFiles/Four51/Shared/1a6d0626-1719-4a8f-9988-029e544b2fae/Glatfelter/Logos/';
+	var urlPath = '//Storage/Files/ProjectFiles/Four51/Shared/1a6d0626-1719-4a8f-9988-029e544b2fae/Glatfelter/Logos/';
 
     var logoSpecs = {
 		"BDP_CoBrandLogo_White": urlPath + 'Misc/YOURLOGOHERE-white.pdf',
